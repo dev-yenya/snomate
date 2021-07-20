@@ -4,9 +4,9 @@ import style from "./Main.module.css";
 class MainHeader extends Component {
     render() {
         return (
-            <div>
-              <h1><span className={style.high_lighter}>SNOMATE</span></h1>
-                <p>숙명여자대학교 학우들을 위한 프로젝트 조원찾기 커뮤니티입니다.</p>  
+            <div className={style.text_align}>
+              <h1 className={style.header_title}><span className={style.high_lighter}>SNOMATE</span></h1>
+                <p className={style.sub_title}>숙명여자대학교 학우들을 위한 프로젝트 조원찾기 커뮤니티.</p> 
             </div>
         );
     }

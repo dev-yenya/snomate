@@ -1,9 +1,33 @@
 .header_title{
     font-weight: 1000;
-    margin-bottom : 2.5rem;
+    margin-top:5rem;
+    color:#ffffff;
+    
 }
 
 .high_lighter{
-    background-color: #848EEF;
+    background-color: #2a2aff;
+    padding-left:3rem;
+    padding-right:70rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    width: 10rem;
+    border-radius:10px 10px 10px 10px
 }
 
+.text_align{
+    margin-left: 5rem;
+  }
+
+.sub_title{
+    padding-right:50rem;
+    padding-top:0.5rem;
+    color: #b2b2b2;
+}
+
+.button{
+    background-color: #2a2aff;
+    color:#ffffff;
+    padding-left:80rem;
+    width: 10rem;
+}
