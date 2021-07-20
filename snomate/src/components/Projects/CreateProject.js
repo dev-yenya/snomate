@@ -11,10 +11,18 @@ class CreateProject extends Component {
         answer: "",
         url_link: ""
     }
+
+   
+    /*handleValueChange(e){
+        let nextState={};
+        nextState[e.target.name]=e.target.Value;
+        console.log(nextState);
+        this.setState
+    }*/
     render() {
         return (
             <div className={styles.text_align}>
-                <h2 className={styles.middle_title}>글쓰기</h2>
+                <h2 className={styles.sub_title}><span className={styles.highlight}>글쓰기</span></h2>
                 <form className={styles.input_form}>
                     <div>
                         <label>제목</label><br/>
