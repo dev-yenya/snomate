@@ -12,12 +12,12 @@ class CreateProject extends Component {
         url_link: ""
     }
    
-   /*handleValueChange(e){
+   handleValueChange = (e) =>{
         let nextState={};
-        nextState[e.target.name]=e.target.Value;
+        nextState[e.target.name]=e.target.value;
         console.log(nextState);
         this.setState(nextState);
-    }*/
+    }
 
     render() {
         return (
