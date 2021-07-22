@@ -68,7 +68,7 @@ class UpdateProject extends Component {
                         <input className={styles.input_box} type="url" name="url_link" value={this.state.url_link} onChange={this.handleValueChange}/>
                     </div>
                     <div>
-                        <button type="submit">수정</button>
+                        <button type="submit" className={styles.button}>수정</button>
                     </div>
                 </form>
             

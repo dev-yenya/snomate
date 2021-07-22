@@ -65,7 +65,7 @@ class CreateProject extends Component {
                         <input className={styles.input_box} type="url" name="url_link" value={this.state.url_link} onChange={this.handleValueChange}/>
                     </div>
                     <div>
-                        <button type="submit">작성</button>
+                        <button type="submit" className={styles.button}>작성</button>
                     </div>
                 </form>
             
