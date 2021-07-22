@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import styles from './Projects.module.css'
 
-class CreateProject extends Component {
-    state = {
-        title: "",
-        period: "",
-        body_text: "",
-        body_images: null,
-        question: "",
-        answer: "",
-        url_link: ""
+class UpdateProject extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            title: "",
+            period: "",
+            body_text: "",
+            body_images: null,
+            question: "",
+            answer: "",
+            url_link: ""
+        }
     }
    
    handleValueChange = (e) =>{
@@ -28,7 +31,7 @@ class CreateProject extends Component {
     render() {
         return (
             <div className={styles.text_align}>
-                <h2 className={styles.sub_title}><span className={styles.highlight}>글쓰기</span></h2>
+                <h2 className={styles.sub_title}><span className={styles.highlight}>수정하기</span></h2>
                 <form className={styles.input_form} onSubmit={this.handleSubmit}>
                     <div>
                         <label className={styles.input_label}>제목</label><br/>
@@ -65,7 +68,7 @@ class CreateProject extends Component {
                         <input className={styles.input_box} type="url" name="url_link" value={this.state.url_link} onChange={this.handleValueChange}/>
                     </div>
                     <div>
-                        <button type="submit">작성</button>
+                        <button type="submit">수정</button>
                     </div>
                 </form>
             
@@ -74,4 +77,4 @@ class CreateProject extends Component {
     }
 }
 
-export default CreateProject;
+export default UpdateProject;

@@ -1,0 +1,43 @@
+.header_title{
+    font-weight: 1000;
+    margin-top:5rem;
+    color:#ffffff;
+    
+}
+
+.highlight{
+    background-color: #2a2aff;
+    margin: 1rem;
+    padding-left:3rem;
+    padding-right:80rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    width: 10rem;
+    border-radius:10px 10px 10px 10px
+}
+
+.text_align{
+    margin-left: 5rem;
+    text-align:center;
+  }
+
+.sub_title{
+    padding-right:50rem;
+    padding-top:0.5rem;
+    color: #b2b2b2;
+}
+
+.button{
+    background-color: #2a2aff;
+    color:#ffffff;
+    padding-left:80rem;
+    width: 10rem;
+}
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 70px;
+    margin-top:7rem;
+}
+
