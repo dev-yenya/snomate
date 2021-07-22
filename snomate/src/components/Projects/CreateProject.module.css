@@ -1,27 +1,48 @@
 .input_form{
-    width :90rem;
+    width :100rem;
     margin: 20px auto;
     padding: 20px;
     font-weight: 1000;
     font-size:1.1rem;
     box-sizing:border-box;
+    display: inline-block;
+    text-align:center;
 }
 
+.input_box{
+    text-align:left;
+    width: 50rem;
+    height:50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:3px solid black;
+
+}
+
+.input_label{
+    font-size:1.5rem;
+    font-weight:1000;
+}
 .text_align{
     margin-left: 5rem;
+    text-align: center;
   }
 
 .sub_title{
+    text-align:center;
     font-weight:1000;
     margin-right:40rem;
+    margin-top:2rem;
 }
 
 .highlight{
-    background-color: #e3e3e3;
+    color: white;
+    background-color: #2a2aff;
     border-radius:5px 5px 5px 5px;
-    padding-left:1rem;
-    padding-right:1rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    
 }
-
 
 

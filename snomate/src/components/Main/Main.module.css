@@ -7,6 +7,7 @@
 
 .highlight{
     background-color: #2a2aff;
+    margin: 1rem;
     padding-left:3rem;
     padding-right:70rem;
     padding-top:1rem;
@@ -17,6 +18,7 @@
 
 .text_align{
     margin-left: 5rem;
+    text-align:center;
   }
 
 .sub_title{
