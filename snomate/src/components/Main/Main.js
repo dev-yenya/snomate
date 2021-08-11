@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import ProjectList from './ProjectList'
 
 class Main extends Component {
     render() {
         return (
             <div>
-                {/*메인페이지 : 프로젝트 리스트 출력가능해야*/}
+                <ProjectList/>
             </div>
         );
     }
