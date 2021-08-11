@@ -1,9 +1,9 @@
 .input_form{
-    width :100rem;
+    width :80rem;
     margin: 20px auto;
     padding: 20px;
     font-weight: 1000;
-    font-size:1.1rem;
+    font-size:1rem;
     box-sizing:border-box;
     display: inline-block;
 }
@@ -20,7 +20,7 @@
 }
 
 .input_label{
-    font-size:1.5rem;
+    font-size:1rem;
     font-weight:1000;
 }
 .text_align{
@@ -37,7 +37,7 @@
 
 .highlight{
     color: white;
-    background-color: #2a2aff;
+    background-color: black;
     border-radius:5px 5px 5px 5px;
     padding: 0.5rem 5rem;
     margin-left:5rem;
