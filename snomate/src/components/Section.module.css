@@ -51,3 +51,7 @@
     font-size: 20px;
     box-sizing: border-box;
   }
+
+.spacer{
+    flex-grow:1;
+}

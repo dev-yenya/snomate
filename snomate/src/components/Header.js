@@ -6,6 +6,8 @@ class MainHeader extends Component {
         return (
             <div className="black-nav">
                 <div>SNOMATE</div>
+                <div className={style.spacer}></div>
+                <button>Log In</button>
             </div>
         );
     }
