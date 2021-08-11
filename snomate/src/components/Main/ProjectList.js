@@ -48,6 +48,11 @@ function App() {
         </div>
       </div>
 
+      <div className="list_align">
+      <div className = "list">
+        <h2>최근 게시물</h2>
+        <hr/>
+        </div>
       <div className="list">
         <h3> 구합니다 </h3>
         <h4> { 글제목1[0] } <span onClick={ ()=> { 하트변경1(하트1+1) } }>🤍</span> {하트1} 💬 📄 </h4>
@@ -71,8 +76,8 @@ function App() {
         <hr/>
       </div>
       <button onClick={ 제목바꾸기3 }>버튼</button>
-
       <Modal />
+      </div>
     </div>
   );
 
