@@ -31,7 +31,6 @@ class UpdateProject extends Component {
     render() {
         return (
             <div className={styles.text_align}>
-                <h2 className={styles.sub_title}><span className={styles.highlight}>수정하기</span></h2>
                 <form className={styles.input_form} onSubmit={this.handleSubmit}>
                     <div>
                         <label className={styles.input_label}>제목</label><br/>
