@@ -6,6 +6,15 @@ import CreateProject from './components/Projects/CreateProject';
 import UpdateProject from './components/Projects/UpdateProject';
 import Footer from './components/Footer';
 import Login from './components/Auth/Login';
+import Projectlook from './components/UserMenu/Projects';
+import styled from "styled-components";
+import Sidebar from "./components/UserMenu/Sidebar";
+
+const Center = styled.div`
+  height: 92vh;
+  display: flex;
+  flex-direction: row;
+`
 
 function App() {
   const token = localStorage.getItem('accessToken');
@@ -18,11 +27,15 @@ function App() {
     <div className="wrapper">
         <BrowserRouter>
           <Header/>
-          <Switch>
-          <Route path="/create" component={CreateProject}/>
-          <Route path="/update" component={UpdateProject}/>
-          <Route path="/" component={Main}/>
-          </Switch>
+            <Center>
+            <Sidebar/>
+            <Switch>
+              <Route exact path="/" component={Main}/>
+              <Route path="/create" component={CreateProject}/>
+              <Route path="/update" component={UpdateProject}/>
+              <Route path="/likedproject" component={Projectlook} />
+            </Switch>
+            </Center>
           <Footer/>
         </BrowserRouter>
     </div>

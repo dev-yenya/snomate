@@ -32,10 +32,10 @@ function App() {
       </div>
 
       <div className="checklist">
-        <div>
-          <label class="form-check-label form-check-inline"><input type="checkbox" class="form-control" /> 구인</label>
-          <label class="form-check-label form-check-inline"><input type="checkbox" class="form-control" /> 정보</label>
-          <label class="form-check-label form-check-inline"><input type="checkbox" class="form-control" /> 구인완료 제외</label>
+        <div className="checksearch"> 
+          <label class="form-check-label form-check-inline"><input type="checkbox" /> 구인</label>
+          <label class="form-check-label form-check-inline"><input type="checkbox" /> 정보</label>
+          <label class="form-check-label form-check-inline"><input type="checkbox" /> 구인완료 제외</label>
 
           <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
@@ -50,28 +50,28 @@ function App() {
 
       <div className="list_align">
       <div className = "list">
-        <h2>최근 게시물</h2>
+        <h4>최근 게시물</h4>
         <hr/>
         </div>
       <div className="list">
-        <h3> 구합니다 </h3>
-        <h4> { 글제목1[0] } <span onClick={ ()=> { 하트변경1(하트1+1) } }>🤍</span> {하트1} 💬 📄 </h4>
+        <h5> 구합니다 </h5>
+        <h6> { 글제목1[0] } <span onClick={ ()=> { 하트변경1(하트1+1) } }>🤍</span> {하트1} 💬 📄 </h6>
         <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
         <hr/>
       </div>
       <button onClick={ 제목바꾸기1 }>버튼</button>
 
       <div className="list">
-        <h3> 구합니다 </h3>
-        <h4> { 글제목2[0] } <span onClick={ ()=> { 하트변경2(하트2+1) } }>🤍</span> {하트2} 💬 📄 </h4>
+        <h5> 구합니다 </h5>
+        <h6> { 글제목2[0] } <span onClick={ ()=> { 하트변경2(하트2+1) } }>🤍</span> {하트2} 💬 📄 </h6>
         <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
         <hr/>
       </div>
       <button onClick={ 제목바꾸기2 }>버튼</button>
 
       <div className="list">
-        <h3> 구합니다 </h3>
-        <h4> { 글제목3[0] } <span onClick={ ()=> { 하트변경3(하트3+1) } }>🤍</span> {하트3} 💬 📄 </h4>
+        <h5> 구합니다 </h5>
+        <h6> { 글제목3[0] } <span onClick={ ()=> { 하트변경3(하트3+1) } }>🤍</span> {하트3} 💬 📄 </h6>
         <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
         <hr/>
       </div>
