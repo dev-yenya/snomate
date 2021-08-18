@@ -9,6 +9,7 @@ import Login from './components/Auth/Login';
 import Projectlook from './components/UserMenu/Projects';
 import styled from "styled-components";
 import Sidebar from "./components/UserMenu/Sidebar";
+import ReadProject from './components/Projects/readProject';
 
 const Center = styled.div`
   height: 92vh;
@@ -34,6 +35,7 @@ function App() {
               <Route path="/create" component={CreateProject}/>
               <Route path="/update" component={UpdateProject}/>
               <Route path="/likedproject" component={Projectlook} />
+              <Route path="/read/:no" component={ReadProject}/>
             </Switch>
             </Center>
           <Footer/>

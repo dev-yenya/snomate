@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import styles from './Projects.module.css'
+import ProjectListService from './ProjectListService';
 
 class CreateProject extends Component {
-    state = {
-        title: "",
-        period: "",
-        body_text: "",
-        body_images: null,
-        question: "",
-        answer: "",
-        url_link: ""
+    constructor(props){
+        super(props)
+        this.state = {
+            projects:[]
+        }
+       {/*} this.createBoard = this.createBoard.bind(this)*/}
     }
+    
    
    handleValueChange = (e) =>{
         let nextState={};
@@ -27,7 +27,7 @@ class CreateProject extends Component {
 
     render() {
         return (
-            <div className={styles.text_align}>
+             <div className={styles.text_align}>
                 <form className={styles.input_form} onSubmit={this.handleSubmit}>
                     <div>
                         <label className={styles.input_label}>제목</label><br/>
@@ -35,13 +35,23 @@ class CreateProject extends Component {
                     </div>
                     <br/>
                     <div>
-                        <label className={styles.input_label}>모집기한</label><br/>
-                        <input className={styles.input_box}type="date" name="period" value={this.state.period} onChange={this.handleValueChange}/>
+                        <label className={styles.input_label}>조원 모집기한</label><br/>
+                        <input className={styles.input_box}type="date" name="end_date" value={this.state.end_date} onChange={this.handleValueChange}/>
+                    </div>
+                    <br/>
+                    <div>
+                        <label className={styles.input_label}>프로젝트 시작일</label><br/>
+                        <input className={styles.input_box}type="date" name="project_start_date" value={this.state.project_start_date} onChange={this.handleValueChange}/>
+                    </div>
+                    <br/>
+                    <div>
+                        <label className={styles.input_label}>프로젝트 마감일</label><br/>
+                        <input className={styles.input_box}type="date" name="project_end_date" value={this.state.project_end_date} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
                     <div>
                         <label className={styles.input_label}>내용</label><br/>
-                        <input className={styles.input_box} type="text" placeholder="내용" name="body_text" value={this.state.body_text} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="text" placeholder="내용" name="body" value={this.state.body} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
                     <div>
@@ -49,19 +59,10 @@ class CreateProject extends Component {
                         <input className={styles.input_box} type="file" name="body_images" value={this.state.body_images} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
-                    <div>
-                        <label className={styles.input_label}>질문</label><br/>
-                        <input className={styles.input_box} type="text" placeholder="질문" name="question" value={this.question} onChange={this.handleValueChange}/>
-                    </div>
-                    <br/>
-                    <div>
-                        <label className={styles.input_label}>답변</label><br/>
-                        <input className={styles.input_box} type="text" placeholder="답변" name="answer" value={this.state.answer} onChange={this.handleValueChange}/>
-                    </div>
                     <br/>
                     <div>
                         <label className={styles.input_label}>링크</label><br/>
-                        <input className={styles.input_box} type="url" name="url_link" value={this.state.url_link} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="url" name="url_link" value={this.state.url_link} onChange={this.handleFormSubmit}/>
                     </div>
                     <div>
                         <button type="submit" className={styles.button}>작성</button>

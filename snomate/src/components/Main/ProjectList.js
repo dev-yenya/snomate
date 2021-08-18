@@ -1,32 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProjectList.css';
+import axios from 'axios';
 
 function App() {
-  let [글제목1, 글제목변경1] = useState(['연락주세요']);
-  let [하트1, 하트변경1] = useState(0);
-  let [글제목2, 글제목변경2] = useState(['연락주세요']);
-  let [하트2, 하트변경2] = useState(0);
-  let [글제목3, 글제목변경3] = useState(['연락주세요']);
-  let [하트3, 하트변경3] = useState(0);
-  
-  function  제목바꾸기1() {
-    var newArray = [...글제목1];
-    newArray[0] = '구인완료';
-    글제목변경1( newArray );
-  }
-  function  제목바꾸기2() {
-    var newArray = [...글제목2];
-    newArray[0] = '구인완료';
-    글제목변경2( newArray );
-  }
-  function  제목바꾸기3() {
-    var newArray = [...글제목3];
-    newArray[0] = '구인완료';
-    글제목변경3( newArray );
-  }
+    let [글제목1, 글제목변경1] = useState(['연락주세요']);
+    let [하트1, 하트변경1] = useState(0);
+    const [projects, setProjects] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  return (
-    <div className="App">
+    useEffect(() => {
+      const fetchProjects = async () => {
+        try {
+          setError(null);
+          setProjects(null);
+          setLoading(true);
+          const response = await axios.get('/article');
+          setProjects(response.data); 
+          console.log(response.data);
+        } catch (e) {
+          setError(e);
+        }
+        setLoading(false);
+      };
+      fetchProjects();
+    }, []);
+  
+    function Modal(){
+      return (
+        <div className="modal">
+          <h2>제목</h2>
+          <p>날짜</p>
+          <p>상세내용</p>
+        </div>
+      )
+    }
+
+    function readArticle(no) {
+      this.props.history.push('/article/${no}');
+    };
+
+    if (loading) return <div>로딩중..</div>;
+    if (error) return <div>에러가 발생했습니다</div>;
+    if (!projects) return null;  
+  
+    return (
+      <div className="App">
       <div className="index">
         <p>교과목 | 대외활동 | 취미</p>
       </div>
@@ -53,44 +72,24 @@ function App() {
         <h4>최근 게시물</h4>
         <hr/>
         </div>
-      <div className="list">
-        <h5> 구합니다 </h5>
-        <h6> { 글제목1[0] } <span onClick={ ()=> { 하트변경1(하트1+1) } }>🤍</span> {하트1} 💬 📄 </h6>
-        <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
+      <div>
+      {projects.map(project => 
+        <div>
+        <div className="list" key = {project.id}>
+        <h5> {project.title} </h5>
+        <h6> {project.categoryName } <span onClick={ ()=> { 하트변경1(하트1+1) } }>🤍</span> {하트1} 💬 📄 </h6>
+        <p> {project.body}</p>
+        <p className="date">{project.updateDate}</p>
         <hr/>
-      </div>
-      <button onClick={ 제목바꾸기1 }>버튼</button>
-
-      <div className="list">
-        <h5> 구합니다 </h5>
-        <h6> { 글제목2[0] } <span onClick={ ()=> { 하트변경2(하트2+1) } }>🤍</span> {하트2} 💬 📄 </h6>
-        <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
-        <hr/>
-      </div>
-      <button onClick={ 제목바꾸기2 }>버튼</button>
-
-      <div className="list">
-        <h5> 구합니다 </h5>
-        <h6> { 글제목3[0] } <span onClick={ ()=> { 하트변경3(하트3+1) } }>🤍</span> {하트3} 💬 📄 </h6>
-        <p>안녕하세요. 스터디 구하려고 글을 올립니다.</p>
-        <hr/>
-      </div>
-      <button onClick={ 제목바꾸기3 }>버튼</button>
+        </div>
+        <button>자세히 보기</button>
+        </div>
+      )}
       <Modal />
       </div>
-    </div>
-  );
-
-}
-
-function Modal(){
-  return (
-    <div className="modal">
-      <h2>제목</h2>
-      <p>날짜</p>
-      <p>상세내용</p>
-    </div>
-  )
+      </div>
+      </div>
+    );
 }
 
 export default App;
