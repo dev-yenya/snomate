@@ -33,9 +33,10 @@ function App() {
             <Switch>
               <Route exact path="/" component={Main}/>
               <Route path="/create" component={CreateProject}/>
-              <Route path="/update" component={UpdateProject}/>
+              <Route path="/update/:no" component={UpdateProject}/>
               <Route path="/read/:no" component={ReadProject}/>
               <Route path="/category/:no" component={CategoryProjectList}/>
+
             </Switch>
             </Center>
           <Footer/>

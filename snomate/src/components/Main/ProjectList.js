@@ -20,15 +20,15 @@ componentDidMount() {
 }
 
 createProject(){
-  this.props.history.push('/create')
+  this.props.history.push('/create/');
 }
 
 readProject(no){
-  this.props.history.push('/read/'+no)
+  this.props.history.push('/read/'+no);
 }
 
 categoryFindProject(category_id){
-  this.props.history.push('/category/'+category_id)
+  this.props.history.push('/category/'+category_id);
 }
 
 하트변경1(하트) {

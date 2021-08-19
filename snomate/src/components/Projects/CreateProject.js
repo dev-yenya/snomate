@@ -7,7 +7,7 @@ class CreateProject extends Component {
     constructor(props){
         super(props)
         this.state = {
-            id: this.props.match.params.id,
+            id:"",
             categoryId:"",
             userId:"1",
             categoryName:"",
@@ -41,7 +41,6 @@ class CreateProject extends Component {
         this.setState(nextState);
     }
 
-
     handleFileChange = (e) => {
         this.setState({
             bodyImages:e.target.file
@@ -49,17 +48,55 @@ class CreateProject extends Component {
         console.log(this.bodyImages);
     }
 
-    handleSubmit = (e) =>{
+    handleSubmit = (e) => {
+        
+    }
+
+    handleSubmit = (e) => {
         e.preventDefault();
         console.log("board => "+ JSON.stringify(this.state));
-        ProjectListService.createOneProject(this.state).then(res => {
-            this.props.history.push('/');
-        });
+        ProjectListService.createOneProject(this.state).then(res =>{
+        this.props.history.push('/');
+        }) 
     }
 
     cancel() {
         this.props.history.push('/');
     }
+
+    
+    /*else {
+            ProjectListService.updateOneProject(this.state.id).then(res => {
+                this.props.history.push('/');
+            });
+        }*/
+
+    /*componentDidMount() {
+        if (this.state.no === '_create') {
+            return
+        } else {
+            ProjectListService.getOneProject(this.state.project.id).then((res) => {
+                let project = res.data;
+                console.log("board => "+ JSON.stringify(project));
+                
+                this.setState({
+                    categoryId : project.categoryId,
+                    userId:"1",
+                    categoryName:project.categoryName,
+                    title:project.title,
+                    stratDate:project.stratDate,
+                    updateDate:project.updateDate,
+                    endDate:project.endDate,
+                    projectStratDate: project.projectStratDate,
+                    projectEndDate:project.EndDate,
+                    body:project.body,
+                    urlLink:project.urlLink,
+                    bodyImages:project.bodyImages,
+                    nowUse:true,
+                });
+            })
+        }
+    }*/
 
     render() {
         return (

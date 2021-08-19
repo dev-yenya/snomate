@@ -23,8 +23,8 @@ class ProjectListService {
         return axios.get(BOARD_API_BASE_URL+"/delete/article/"+no);
     }
 
-    updateOneProject(no, article){
-        return axios.put(BOARD_API_BASE_URL+"/"+no, article);
+    updateOneProject(article){
+        return axios.put(BOARD_API_BASE_URL+"/article", article);
     }
 }
 

@@ -48,6 +48,11 @@ class readProject extends Component {
     goToList() {
         window.location.href="/";
     }
+
+    goToUpdate(no){
+        window.location.href="/update/"+no;
+    }
+
     render() {
         return (
             <div className={styles.text_align}>
@@ -75,7 +80,7 @@ class readProject extends Component {
                     <br/>
                     <div>
                         <label className={styles.input_label}>프로젝트 시작일</label><br/>
-                        <div className={styles.input_box}>{this.state.project.projectStratDate}</div>
+                        <div className={styles.input_box}>{this.state.project.projectStartDate}</div>
                     </div>
                     <br/>
                     <div>
@@ -99,7 +104,7 @@ class readProject extends Component {
                     </div>
                     <br></br>
                     <div>
-                        <button type="submit" onClick={this.goToList}>뒤로가기</button> <button type="submit" >수정하기</button> <button onClick={this.deleteView}>삭제하기</button>
+                        <button onClick={this.goToList}>뒤로가기</button> <button onClick={() => this.goToUpdate(this.state.id)} >수정하기</button> <button onClick={this.deleteView}>삭제하기</button>
                     </div>
                 </div>
             
