@@ -8,22 +8,7 @@ class UpdateProject extends Component {
         super(props)
         this.state = {
             no : this.props.match.params.no,
-            project : {
-                id:"",
-                categoryId:"",
-                userId:"1",
-                categoryName:"",
-                title:"",
-                starttDate:"",
-                updateDate:"",
-                endDate:"",
-                projectStartDate:"",
-                projectEndDate:"",
-                body:"",
-                urlLink:"",
-                bodyImages:null,
-                nowUse:true,
-            }
+            project : {}
         }
         this.handleValueChange = this.handleValueChange.bind(this);
         this.handleFileChange = this.handleFileChange.bind(this);
@@ -61,25 +46,8 @@ class UpdateProject extends Component {
 
     componentDidMount(){
         ProjectListService.getOneProject(this.state.no).then( (res) => {
-            let board = res.data;
-            console.log("board => "+ JSON.stringify(board));
-            
-            this.setState({
-                id : board.id,
-                categoryId: board.categoryId,
-                userId:"1",
-                categoryName:board.categoryName,
-                title:board.title,
-                startDate:board.startDate,
-                updateDate:board.updateDate,
-                endDate:board.endDate,
-                projectStartDate:board.projectStartDate,
-                projectEndDate:board.projectEndDate,
-                body:board.body,
-                urlLink:board.urlLink,
-                bodyImages:board.bodyImages,
-                nowUse:true,
-                });
+            this.setState({project:res.data});
+            console.log(res.data);
         });
     }
 
@@ -96,7 +64,7 @@ class UpdateProject extends Component {
                 <form className={styles.input_form} onSubmit={this.handleSubmit}>
                     <div>
                         <label className={styles.input_label}>제목</label><br/>
-                        <input className={styles.input_box} type="text" name="title" placeholder="제목" value={this.state.project.title} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="text" name="title" placeholder="title" value={this.state.project.title} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
                     <div>
@@ -110,7 +78,7 @@ class UpdateProject extends Component {
                     <br/>
                     <div>
                         <label className={styles.input_label}>게시판 소제목</label><br/>
-                        <input className={styles.input_box} type="text" name="categoryName" placeholder="게시판 소제목" value={this.state.project.CategoryName} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="text" name="categoryName" value={this.state.project.CategoryName} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
                     <div>
@@ -120,7 +88,7 @@ class UpdateProject extends Component {
                     <br/>
                     <div>
                         <label className={styles.input_label}>프로젝트 시작일</label><br/>
-                        <input className={styles.input_box}type="datetime-local"  name="projectStratDate" value={this.state.project.projectStratDate} onChange={this.handleDatetimeChange}/>
+                        <input className={styles.input_box}type="datetime-local"  name="projectStartDate" value={this.state.project.projectStartDate} onChange={this.handleDatetimeChange}/>
                     </div>
                     <br/>
                     <div>

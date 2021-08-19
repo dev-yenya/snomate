@@ -3,8 +3,10 @@ import GoogleLogin from 'react-google-login';
 
 class SignUp extends Component {
     responseGoogle=(response)=>{
-        console.log(response);
         console.log(response.profileObj);
+    }
+    
+    verification = (e) => {
     }
 
     render() {
