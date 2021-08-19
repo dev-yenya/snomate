@@ -7,44 +7,37 @@ class CategoryProjectList extends Component {
         super(props)
         this.state = { 
             id: this.props.match.params.no,
-            categoryProjects: [],
-            projects:[]
+            categoryProjects: []
         }
       this.createProject = this.createProject.bind(this);
       console.log(this.no);
     }
 
     componentDidMount() {
-        ProjectListService.getCategoryList(this.state.no).then((res) => {
+        ProjectListService.getCategoryList(this.state.id).then((res) => {
             this.setState({ categoryProjects: res.data});
             console.log(res.data);
         });
-        ProjectListService.getProjectList().then((res) => {
-          this.setState({ projects: res.data});
-          console.log(res.data);
-      });
     }
 
     createProject(){
         this.props.history.push('/create')
-      }
+    }
       
-
     categoryFindProject(category_id){
-        this.props.history.push('/category/'+category_id)
+        window.location.href="/category/"+category_id
       }
 
     하트변경1(하트) {
         하트 = 하트+1;
     }
-      
 
     render() {
       let 하트1= 0;
         return (
           <div className="App">
           <div className="index">
-              <div onClick = {()=>{this.categoryFindProject("1")}}>교과목</div><div onClick = {()=>{this.categoryFindProject("2")}}>대외활동</div><div onClick = {()=>{this.categoryFindProject("3")}}>취미</div>
+          <div className="categoryName" onClick = {()=>{this.categoryFindProject("1")}}>교과목 |</div><div className="categoryName" onClick = {()=>{this.categoryFindProject("2")}}> 대외활동 |</div><div className="categoryName" onClick = {()=>{this.categoryFindProject("3")}} > 취미</div>
           </div>
     
           <div className="checklist">
@@ -72,13 +65,13 @@ class CategoryProjectList extends Component {
           <div>
           {this.state.categoryProjects.map(categoryProject => 
             <div>
-            <div className="list" key = {categoryProject.categorySecond}>
+            <div className="list" key = {categoryProject.id}>
             <h5> {categoryProject.title} </h5>
-            <h6> {categoryProject.title } <span onClick={ ()=> { this.하트변경1(하트1) } }>🤍</span> {하트1} 💬 📄 </h6>
-            {/*<p> {project.body}</p>
-            <p className="nickname"> {project.userName}</p>
-            <p className="date">{project.updateDate}</p>
-          <hr/>*/}
+            <h6> {categoryProject.categoryName } <span onClick={ ()=> { this.하트변경1(하트1) } }>🤍</span> {하트1} 💬 📄 </h6>
+            <p> {categoryProject.body}</p>
+            <p className="nickname"> {categoryProject.userName}</p>
+            <p className="date">{categoryProject.updateDate}</p>
+          <hr/>
             </div>
             <button>자세히 보기</button>
             </div>

@@ -88,3 +88,7 @@ body {
   font-size:5px; 
   text-align:right;
 }
+
+.categoryName{
+  display:inline;
+}

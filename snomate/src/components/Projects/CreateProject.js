@@ -7,11 +7,12 @@ class CreateProject extends Component {
     constructor(props){
         super(props)
         this.state = {
+            id: this.props.match.params.id,
             categoryId:"",
             userId:"1",
             categoryName:"",
             title:"",
-            stratDate:"2021-08-19",
+            stratDate:"",
             updateDate:"",
             endDate:"",
             projectStratDate:"",
@@ -21,9 +22,9 @@ class CreateProject extends Component {
             bodyImages:null,
             nowUse:true,
         }
-        
         this.handleValueChange = this.handleValueChange.bind(this);
         this.handleFileChange = this.handleFileChange.bind(this);
+        this.handleDatetimeChange = this.handleDatetimeChange.bind(this);
     }
 
    handleValueChange = (e) =>{

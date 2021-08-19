@@ -7,6 +7,10 @@ class ProjectListService {
        return axios.get(BOARD_API_BASE_URL+"/article");
     }
 
+    getCategoryList(no) {
+        return axios.get(BOARD_API_BASE_URL+"/article/category/"+no);
+    }
+
     createOneProject(article) {
         return axios.post(BOARD_API_BASE_URL+"/article", article);
     }
@@ -15,14 +19,13 @@ class ProjectListService {
         return axios.get(BOARD_API_BASE_URL+"/article/"+no);
     }
 
-    updateOneProject(article) {
-        return axios.put(BOARD_API_BASE_URL+"/article", article);
+    deleteOneProject(no){
+        return axios.get(BOARD_API_BASE_URL+"/delete/article/"+no);
     }
 
-    getCategoryList(no) {
-        return axios.get(BOARD_API_BASE_URL+"/category/"+no);
+    updateOneProject(no, article){
+        return axios.put(BOARD_API_BASE_URL+"/"+no, article);
     }
-
 }
 
 export default new ProjectListService();

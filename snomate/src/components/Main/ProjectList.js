@@ -40,7 +40,7 @@ render() {
     return (
       <div className="App">
       <div className="index">
-          <div onClick = {()=>{this.categoryFindProject("1")}}>교과목</div><div onClick = {()=>{this.categoryFindProject("2")}}>대외활동</div><div onClick = {()=>{this.categoryFindProject("3")}}>취미</div>
+      <div className="categoryName" onClick = {()=>{this.categoryFindProject("1")}}>교과목 |</div><div className="categoryName" onClick = {()=>{this.categoryFindProject("2")}}> 대외활동 |</div><div className="categoryName" onClick = {()=>{this.categoryFindProject("3")}} > 취미</div>
       </div>
 
       <div className="checklist">

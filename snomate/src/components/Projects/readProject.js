@@ -9,6 +9,8 @@ class readProject extends Component {
             id : this.props.match.params.no,
             project : {}
         }
+        this.deleteView = this.deleteView.bind(this);
+
     }
 
     componentDidMount(){
@@ -30,10 +32,22 @@ class readProject extends Component {
         )
     }
 
-    goToList(){
-        this.props.history.push("/Article");
+    deleteView = async function () {
+        if(window.confirm("정말로 글을 삭제하시겠습니까?\n삭제된 글은 복구 할 수 없습니다.")) {
+            ProjectListService.deleteOneProject(this.state.id).then( res => {
+                if (res.status === 200) {
+                    window.location.href="/";
+                } else {
+                    alert("글 삭제가 실패했습니다.");
+                }
+            });
+
+        }
     }
 
+    goToList() {
+        window.location.href="/";
+    }
     render() {
         return (
             <div className={styles.text_align}>
@@ -85,7 +99,7 @@ class readProject extends Component {
                     </div>
                     <br></br>
                     <div>
-                        <button type="submit" >수정하기</button>
+                        <button type="submit" onClick={this.goToList}>뒤로가기</button> <button type="submit" >수정하기</button> <button onClick={this.deleteView}>삭제하기</button>
                     </div>
                 </div>
             

@@ -11,7 +11,7 @@ class UpdateProject extends Component {
             userId:"1",
             categoryName:"",
             title:"",
-            stratDate:"2021-08-19",
+            stratDate:"",
             updateDate:"",
             endDate:"",
             projectStratDate:"",

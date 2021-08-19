@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import swal from 'sweetalert'; 
+import GoogleSignUp from './GoogleSignUp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: '100%',
     marginTop: theme.spacing(2),
+    alignItems: 'center',
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -35,7 +37,9 @@ async function loginUser(credentials) {
     },
     body: JSON.stringify(credentials)
   })
-    .then(data => data.json())
+    .then(data => data.json(
+      console.log(data)
+    ))
  }
 
 export default function Signin() {
@@ -102,6 +106,7 @@ export default function Signin() {
           >
             Login
           </Button>
+          <GoogleSignUp/>
         </form>
       </div>
     </Grid>
