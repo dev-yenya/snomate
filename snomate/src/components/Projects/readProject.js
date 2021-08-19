@@ -68,11 +68,11 @@ class readProject extends Component {
                         <div className={styles.input_box}>{this.returnBoardType(this.state.project.categoryId)}</div>
                     </div>
                     <br/>
-                    <div>
+                    {/*<div>
                         <label className={styles.input_label}>게시판 소제목</label><br/>
                         <div className={styles.input_box}>{this.returnBoardType(this.state.project.categoryName)}</div>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>조원 모집기한</label><br/>
                         <div className={styles.input_box}>{this.state.project.updateDate}</div>

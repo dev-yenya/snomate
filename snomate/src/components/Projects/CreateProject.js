@@ -117,11 +117,11 @@ class CreateProject extends Component {
                         </select>
                     </div>
                     <br/>
-                    <div>
+                    {/*<div>
                         <label className={styles.input_label}>게시판 소제목</label><br/>
                         <input className={styles.input_box} type="text" name="categoryName" placeholder="게시판 소제목" value={this.state.CategoryName} onChange={this.handleValueChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>조원 모집기한</label><br/>
                         <input className={styles.input_box} type="datetime-local" name="updateDate" value={this.state.updateDate} onChange={this.handleDatetimeChange}/>

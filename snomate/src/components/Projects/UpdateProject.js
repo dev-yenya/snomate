@@ -16,9 +16,10 @@ class UpdateProject extends Component {
 
    handleValueChange = (e) =>{
         let nextState={};
-        nextState[e.target.name]=e.target.value;        
-        console.log(nextState);
-        this.setState(nextState);
+        nextState = this.state
+        nextState.project[e.target.name] = e.target.value
+        this.setState(nextState)
+        console.log(nextState)
     }
 
     handleDatetimeChange = (e) =>{
@@ -38,14 +39,14 @@ class UpdateProject extends Component {
 
     handleSubmit = (e) =>{
         e.preventDefault();
-        console.log("board => "+ JSON.stringify(this.state));
-        ProjectListService.updateOneProject(this.state).then(res => {
+        console.log("board => "+ JSON.stringify(this.state.project));
+        ProjectListService.updateOneProject(this.state.project).then(res => {
             this.props.history.push('/');
         });
     }
 
     componentDidMount(){
-        ProjectListService.getOneProject(this.state.no).then( (res) => {
+        ProjectListService.getOneProject(this.state.no).then((res) => {
             this.setState({project:res.data});
             console.log(res.data);
         });
@@ -76,11 +77,11 @@ class UpdateProject extends Component {
                         </select>
                     </div>
                     <br/>
-                    <div>
+                    {/*<div>
                         <label className={styles.input_label}>게시판 소제목</label><br/>
                         <input className={styles.input_box} type="text" name="categoryName" value={this.state.project.CategoryName} onChange={this.handleValueChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>조원 모집기한</label><br/>
                         <input className={styles.input_box} type="datetime-local" name="updateDate" value={this.state.project.updateDate} onChange={this.handleDatetimeChange}/>
