@@ -15,8 +15,12 @@ class ProjectListService {
         return axios.get(BOARD_API_BASE_URL+"/article/"+no);
     }
 
+    updateOneProject(article) {
+        return axios.put(BOARD_API_BASE_URL+"/article", article);
+    }
+
     getCategoryList(no) {
-        return axios.get(BOARD_API_BASE_URL+"/category/"+no)
+        return axios.get(BOARD_API_BASE_URL+"/category/"+no);
     }
 
 }
