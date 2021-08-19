@@ -8,7 +8,9 @@ import Footer from './components/Footer';
 import Login from './components/Auth/Login';
 import styled from "styled-components";
 import Sidebar from "./components/UserMenu/Sidebar";
-import ReadProject from './components/Projects/readProject'
+import ReadProject from './components/Projects/readProject';
+import Projectlook from './components/UserMenu/Projects';
+import Projectdone from './components/UserMenu/Projectsdone';
 import CategoryProjectList from './components/Main/CategoryProjectList';
 
 const Center = styled.div`
@@ -36,7 +38,8 @@ function App() {
               <Route path="/update/:no" component={UpdateProject}/>
               <Route path="/read/:no" component={ReadProject}/>
               <Route path="/category/:no" component={CategoryProjectList}/>
-
+              <Route path="/likedproject" component={Projectlook} />
+              <Route path="/progressproject" component={Projectdone} />
             </Switch>
             </Center>
           <Footer/>

@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import SidebarItem from "./SidebarItem";
 import profile from "./profile.jpg";
+import Bar from "./Bar";
+import { ProgressBar} from 'react-bootstrap';
 
 const Side = styled.div`
   display: flex;
@@ -34,6 +36,9 @@ function Sidebar() {
     { name: "마음에 든 프로젝트", path: "/likedproject" },
     { name: "진행한 프로젝트", path: "/progressproject"}
   ];
+
+  const progress1 = 36.5;
+
   return (
     <Side>
       <div>
@@ -45,7 +50,16 @@ function Sidebar() {
           <span onClick={ ()=> { contactchange(contact+1) } }>📩</span> {contact}  
           <span onClick={ ()=> { selectchange(select+1) } }>📢</span> {select}        
       </div>
-      <h1>menu</h1>
+
+      <h1></h1>_
+      <h1></h1>36.5°C
+      <div style={{ width: 150 }}>
+        <ProgressBar now={progress1} variant="success" />
+      </div >
+      <div>
+        <Bar />
+      </div>
+
       <Menu>
         {menus.map((menu, index) => {
           return (
