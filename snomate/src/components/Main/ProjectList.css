@@ -83,3 +83,8 @@ body {
 .date{
   text-align:right;
 }
+
+.nickname{
+  font-size:5px; 
+  text-align:right;
+}

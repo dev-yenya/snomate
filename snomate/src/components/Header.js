@@ -44,9 +44,9 @@ export default function Profile() {
     window.location.href="/" 
  }
 
- const handleClickCreate = (e) =>{
+ /*const handleClickCreate = (e) =>{
     window.location.href="/create"
-}
+}*/
 
   return (
     <div className={classes.root}>
@@ -57,9 +57,9 @@ export default function Profile() {
           </Typography>
           <div className={style.spacer}></div>
             <div>
-            <IconButton onClick={handleClickCreate} color="inherit">
+            {/*<IconButton onClick={handleClickCreate} color="inherit">
               write
-            </IconButton>
+  </IconButton>*/}
             <IconButton onClick={handleMenu} color="inherit">
               logout
             </IconButton>

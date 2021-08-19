@@ -1,7 +1,5 @@
 .input_form{
-    width :80rem;
-    margin: 20px;
-    padding: 20px;
+    width :75rem;
     font-weight: 1000;
     font-size:1rem;
     box-sizing:border-box;
@@ -9,30 +7,33 @@
 }
 
 .input_box{
+    display: inline-block;
     text-align:left;
     width: 48rem;
     height:50px;
     border-top:none;
     border-left:none;
     border-right:none;
-    border-bottom:3px solid black;
-
+    border-bottom:1px solid black;
+    padding-top:1rem;
+    font-size: small;
 }
 
 .input_label{
-    font-size:1rem;
+    font-size:medium;
     font-weight:1000;
 }
 .text_align{
-    margin-left: 5rem;
+    margin-top: 40px;
     text-align: center;
   }
 
 .sub_title{
     text-align:center;
     font-weight:1000;
-    margin-right:40rem;
-    margin-top:2rem;
+    margin-bottom:5rem;
+    padding-right:85%;
+
 }
 
 .highlight{

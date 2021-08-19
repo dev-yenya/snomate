@@ -6,10 +6,10 @@ import CreateProject from './components/Projects/CreateProject';
 import UpdateProject from './components/Projects/UpdateProject';
 import Footer from './components/Footer';
 import Login from './components/Auth/Login';
-import Projectlook from './components/UserMenu/Projects';
 import styled from "styled-components";
 import Sidebar from "./components/UserMenu/Sidebar";
-import ReadProject from './components/Projects/readProject';
+import ReadProject from './components/Projects/readProject'
+import CategoryProjectList from './components/Main/CategoryProjectList';
 
 const Center = styled.div`
   height: 92vh;
@@ -34,8 +34,8 @@ function App() {
               <Route exact path="/" component={Main}/>
               <Route path="/create" component={CreateProject}/>
               <Route path="/update" component={UpdateProject}/>
-              <Route path="/likedproject" component={Projectlook} />
               <Route path="/read/:no" component={ReadProject}/>
+              <Route path="/category/:no" component={CategoryProjectList}/>
             </Switch>
             </Center>
           <Footer/>

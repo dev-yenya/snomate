@@ -1,18 +1,22 @@
 import axios from 'axios';
 
-const BOARD_API_BASE_URL = "http://localhost:8080/article";
+const BOARD_API_BASE_URL = "http://localhost:8080";
 
 class ProjectListService {
-    getBoards() {
-       return axios.get(BOARD_API_BASE_URL);
+    getProjectList() {
+       return axios.get(BOARD_API_BASE_URL+"/article");
     }
 
-    createArticle(article) {
-        return axios.post(BOARD_API_BASE_URL, article);
+    createOneProject(article) {
+        return axios.post(BOARD_API_BASE_URL+"/article", article);
     }
 
-    getOnArticle(no){
-        return axios.get(BOARD_API_BASE_URL+"/"+no);
+    getOneProject(no){
+        return axios.get(BOARD_API_BASE_URL+"/article/"+no);
+    }
+
+    getCategoryList(no) {
+        return axios.get(BOARD_API_BASE_URL+"/category/"+no)
     }
 
 }
