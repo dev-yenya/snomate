@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
 
 class SignUp extends Component {
-    responseGoogle=(response)=>{
-        console.log(response.profileObj);
+    responseGoogle=(res)=>{
+        console.log(res.profileObj);
+        window.location.href="/signup/"+res.profileObj.name+"/"+res.profileObj.email;
     }
     
     verification = (e) => {

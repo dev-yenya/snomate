@@ -53,6 +53,10 @@ class readProject extends Component {
         window.location.href="/update/"+no;
     }
 
+    goToContact(no){
+        window.location.href="/contact/"+no;
+    }
+
     render() {
         return (
             <div className={styles.text_align}>
@@ -78,16 +82,16 @@ class readProject extends Component {
                         <div className={styles.input_box}>{this.state.project.updateDate}</div>
                     </div>
                     <br/>
-                    <div>
+                    {/*<div>
                         <label className={styles.input_label}>프로젝트 시작일</label><br/>
-                        <div className={styles.input_box}>{this.state.project.projectStartDate}</div>
+                        <input className={styles.input_box}type="datetime-local"  name="projectStartDate" value={this.state.project.projectStartDate} onChange={this.handleDatetimeChange}/>
                     </div>
                     <br/>
                     <div>
                         <label className={styles.input_label}>프로젝트 마감일</label><br/>
-                        <div className={styles.input_box}>{this.state.projectEndDate}</div>
+                        <input className={styles.input_box}type="datetime-local"  name="projectEndDate" value={this.state.project.projectEndDate} onChange={this.handleDatetimeChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>내용</label><br/>
                         <p className={styles.input_box}>{this.state.project.body}</p>
@@ -104,7 +108,7 @@ class readProject extends Component {
                     </div>
                     <br></br>
                     <div>
-                        <button onClick={this.goToList}>뒤로가기</button> <button onClick={() => this.goToUpdate(this.state.id)} >수정하기</button> <button onClick={this.deleteView}>삭제하기</button>
+                        <button onClick={this.goToList}>뒤로가기</button> <button onClick={() => this.goToUpdate(this.state.id)} >수정하기</button> <button onClick={this.deleteView}>삭제하기</button> <button onClick={() => this.goToContact(this.state.id)} > 컨택하기</button>
                     </div>
                 </div>
             

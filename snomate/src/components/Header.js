@@ -53,7 +53,7 @@ export default function Profile() {
       <AppBar position="static">
         <Toolbar>
           <Typography onClick={handleClickMain} variant="h6" className={classes.title}>
-            Snomate
+            SNOMATE
           </Typography>
           <div className={style.spacer}></div>
             <div>

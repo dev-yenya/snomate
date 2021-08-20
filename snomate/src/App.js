@@ -12,6 +12,9 @@ import ReadProject from './components/Projects/readProject';
 import Projectlook from './components/UserMenu/Projects';
 import Projectdone from './components/UserMenu/Projectsdone';
 import CategoryProjectList from './components/Main/CategoryProjectList';
+import Update from "./components/Contact/Contacts";
+import Receive from "./components/Contact/Contactreceive";
+import SignUp from './components/Auth/SignUp';
 
 const Center = styled.div`
   height: 92vh;
@@ -40,6 +43,9 @@ function App() {
               <Route path="/category/:no" component={CategoryProjectList}/>
               <Route path="/likedproject" component={Projectlook} />
               <Route path="/progressproject" component={Projectdone} />
+              <Route path="/receivecontact" component={Receive} />
+              <Route path="/sendcontact" component={Update} />
+              <Route path="/signup/:name/:email" component={SignUp}/>
             </Switch>
             </Center>
           <Footer/>

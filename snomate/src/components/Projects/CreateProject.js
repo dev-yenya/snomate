@@ -12,10 +12,8 @@ class CreateProject extends Component {
             userId:"1",
             categoryName:"",
             title:"",
-            stratDate:"",
             updateDate:"",
-            endDate:"",
-            projectStratDate:"",
+            projectStartDate:"",
             projectEndDate:"",
             body:"",
             urlLink:"",
@@ -34,7 +32,7 @@ class CreateProject extends Component {
         this.setState(nextState);
     }
 
-    handleDatetimeChange = (e) =>{
+    handleDatetimeChange = (e) => {
         let nextState={};
         nextState[e.target.name]=moment(e.target.value).format('YYYY-MM-DD HH:mm:ss');
         console.log(nextState);
@@ -49,10 +47,6 @@ class CreateProject extends Component {
     }
 
     handleSubmit = (e) => {
-        
-    }
-
-    handleSubmit = (e) => {
         e.preventDefault();
         console.log("board => "+ JSON.stringify(this.state));
         ProjectListService.createOneProject(this.state).then(res =>{
@@ -63,40 +57,6 @@ class CreateProject extends Component {
     cancel() {
         this.props.history.push('/');
     }
-
-    
-    /*else {
-            ProjectListService.updateOneProject(this.state.id).then(res => {
-                this.props.history.push('/');
-            });
-        }*/
-
-    /*componentDidMount() {
-        if (this.state.no === '_create') {
-            return
-        } else {
-            ProjectListService.getOneProject(this.state.project.id).then((res) => {
-                let project = res.data;
-                console.log("board => "+ JSON.stringify(project));
-                
-                this.setState({
-                    categoryId : project.categoryId,
-                    userId:"1",
-                    categoryName:project.categoryName,
-                    title:project.title,
-                    stratDate:project.stratDate,
-                    updateDate:project.updateDate,
-                    endDate:project.endDate,
-                    projectStratDate: project.projectStratDate,
-                    projectEndDate:project.EndDate,
-                    body:project.body,
-                    urlLink:project.urlLink,
-                    bodyImages:project.bodyImages,
-                    nowUse:true,
-                });
-            })
-        }
-    }*/
 
     render() {
         return (
@@ -124,29 +84,30 @@ class CreateProject extends Component {
                     <br/>*/}
                     <div>
                         <label className={styles.input_label}>조원 모집기한</label><br/>
-                        <input className={styles.input_box} type="datetime-local" name="updateDate" value={this.state.updateDate} onChange={this.handleDatetimeChange}/>
+                        <input className={styles.input_box} type="datetime-local" name="endDate" value={this.state.updateDate} onChange={this.handleDatetimeChange}/>
                     </div>
                     <br/>
-                    <div>
+                   {/*<div>
                         <label className={styles.input_label}>프로젝트 시작일</label><br/>
-                        <input className={styles.input_box}type="datetime-local"  name="projectStratDate" value={this.state.projectStratDate} onChange={this.handleDatetimeChange}/>
+                        <input className={styles.input_box}type="datetime-local"  name="projectStartDate" value={this.state.project.projectStartDate} onChange={this.handleDatetimeChange}/>
                     </div>
                     <br/>
                     <div>
                         <label className={styles.input_label}>프로젝트 마감일</label><br/>
-                        <input className={styles.input_box}type="datetime-local"  name="projectEndDate" value={this.state.projectEndDate} onChange={this.handleDatetimeChange}/>
+                        <input className={styles.input_box}type="datetime-local"  name="projectEndDate" value={this.state.project.projectEndDate} onChange={this.handleDatetimeChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>내용</label><br/>
                         <input className={styles.input_box} type="text" placeholder="내용" name="body" value={this.state.body} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
+                    {/*
                     <div>
                         <label className={styles.input_label}>대표 이미지</label><br/>
                         <input className={styles.input_box} type="file" name="bodyImages" value={this.state.bodyImages} onChange={this.handleFileChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <br/>
                     <div>
                         <label className={styles.input_label}>링크</label><br/>
@@ -154,8 +115,7 @@ class CreateProject extends Component {
                     </div>
                     <br></br>
                     <div>
-                        <button type="submit" onClick={this.handleSubmit}>작성</button> 
-                        <button onClick={this.cancel.bind(this)}>뒤로가기</button>
+                        <button type="submit" onClick={this.handleSubmit}>작성</button> <button onClick={this.cancel.bind(this)}>뒤로가기</button>
                     </div>
                 </form>
             

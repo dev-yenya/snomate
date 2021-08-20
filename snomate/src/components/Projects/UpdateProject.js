@@ -84,10 +84,10 @@ class UpdateProject extends Component {
                     <br/>*/}
                     <div>
                         <label className={styles.input_label}>조원 모집기한</label><br/>
-                        <input className={styles.input_box} type="datetime-local" name="updateDate" value={this.state.project.updateDate} onChange={this.handleDatetimeChange}/>
+                        <input className={styles.input_box} type="datetime-local" name="updateDate" value={this.state.project.updateDate} onChange={this.handleValueChange}/>
                     </div>
                     <br/>
-                    <div>
+                    {/*<div>
                         <label className={styles.input_label}>프로젝트 시작일</label><br/>
                         <input className={styles.input_box}type="datetime-local"  name="projectStartDate" value={this.state.project.projectStartDate} onChange={this.handleDatetimeChange}/>
                     </div>
@@ -96,7 +96,7 @@ class UpdateProject extends Component {
                         <label className={styles.input_label}>프로젝트 마감일</label><br/>
                         <input className={styles.input_box}type="datetime-local"  name="projectEndDate" value={this.state.project.projectEndDate} onChange={this.handleDatetimeChange}/>
                     </div>
-                    <br/>
+                    <br/>*/}
                     <div>
                         <label className={styles.input_label}>내용</label><br/>
                         <input className={styles.input_box} type="text" placeholder="내용" name="body" value={this.state.project.body} onChange={this.handleValueChange}/>

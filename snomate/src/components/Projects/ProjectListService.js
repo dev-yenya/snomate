@@ -26,6 +26,10 @@ class ProjectListService {
     updateOneProject(article){
         return axios.put(BOARD_API_BASE_URL+"/article", article);
     }
+    
+    getMyProject(no){
+        return axios.get(BOARD_API_BASE_URL+"/article/user/"+no);
+    }
 }
 
 export default new ProjectListService();

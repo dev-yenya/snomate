@@ -1,0 +1,38 @@
+.input_form{
+    width :55rem;
+    margin: 20px;
+    font-weight: 500;
+    font-size:0.8rem;
+    box-sizing:border-box;
+    display: inline-block;
+}
+
+.input_box{
+    text-align:left;
+    width: 40rem;
+    height:50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:3px solid black;
+
+}
+
+.input_label{
+    font-size:1rem;
+    font-weight:1000;
+}
+.text_align{
+    margin-left: 5rem;
+    text-align: center;
+  }
+
+.button{
+    background-color:#c3c3c3;
+    padding: 0.5rem 1rem;
+    border:none;
+    font-size:1rem;
+    font-weight:1000;
+}
+
+

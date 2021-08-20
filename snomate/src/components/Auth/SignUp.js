@@ -6,8 +6,8 @@ class SignUp extends Component {
     constructor(props){
         super(props)
         this.state = {
-            name:"",
-            email:"",
+            userName:this.props.match.params.name,
+            euserEmail:this.props.match.params.email,
             nickname:"",
             studentid:"",
             stratDate:"",
@@ -52,12 +52,12 @@ class SignUp extends Component {
                 <form className={styles.input_form} onSubmit={this.handleSubmit}>
                     <div>
                         <label className={styles.input_label}>이름</label><br/>
-                        <input className={styles.input_box} type="text" name="userName" placeholder="이름을 입력해주세요" value={this.state.userName} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="text" name="userName" placeholder="이름을 입력해주세요" value={this.state.userName} readOnly/>
                     </div>
                     <br/>
                     <div>
                         <label className={styles.input_label}>이메일</label><br/>
-                        <input className={styles.input_box} type="text" name="userEmail" placeholder="이메일을 입력해주세요" value={this.state.userEmail} onChange={this.handleValueChange}/>
+                        <input className={styles.input_box} type="text" name="userEmail" value = {this.state.userEmail} readOnly/>
                     </div>
                     <br/>
                     <div>
@@ -79,9 +79,7 @@ class SignUp extends Component {
                     <br/>
                     <div>
                         <label className={styles.input_label}>비밀번호</label><br/>
-                        <input className={styles.input_box} type="password" name="userPassword" placeholder="비밀번호를 입력해주세요" value={this.state.userPassword} onChange={this.handleValueChange}
-                        pattern = "^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$"
-                        title = "비밀번호는 숫자, 문자, 특수문자를 모두 활용한 8~16자리여야 합니다."/>
+                        <input className={styles.input_box} type="password" name="userPassword" placeholder="비밀번호를 입력해주세요" value={this.state.userPassword} onChange={this.handleValueChange} pattern = "^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$" title = "비밀번호는 숫자, 문자, 특수문자를 모두 활용한 8~16자리여야 합니다."/>
                     </div>
                     <br/>
                     <div>
@@ -90,8 +88,7 @@ class SignUp extends Component {
                     </div>
                     <br></br>
                     <div>
-                        <button type="submit" onClick={this.handleSubmit}>가입하기</button> 
-                        <button onClick={this.cancel.bind(this)}>뒤로가기</button>
+                        <button type="submit" onClick={this.handleSubmit}>가입하기</button> <button onClick={this.cancel.bind(this)}>뒤로가기</button>
                     </div>
                 </form>
             </div>

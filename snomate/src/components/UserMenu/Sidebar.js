@@ -13,6 +13,7 @@ const Side = styled.div`
   align-items: center;
   justify-content: center;
   width: 17%;
+  margin-top: 10rem;
 `
 const Profile = styled.img`
   width: 100px;
@@ -43,16 +44,21 @@ function Sidebar() {
     <Side>
       <div>
         <Profile src={profile}></Profile> 
-        <div> Name </div>
-        <div> Email </div>
-      </div>
-      <div>        
+        <br></br>
+        <div>        
           <span onClick={ ()=> { contactchange(contact+1) } }>📩</span> {contact}  
-          <span onClick={ ()=> { selectchange(select+1) } }>📢</span> {select}        
+          <span onClick={ ()=> { selectchange(select+1) } }> 📢</span> {select}        
       </div>
+        <table>
+          <tr><td>Name</td><td>솔룩스</td></tr>
+          <tr><td>Nickname</td><td>솔록홈즈</td></tr>
+        </table>
+      </div>
+      <br/>
+      <br></br>
 
-      <h1></h1>_
-      <h1></h1>36.5°C
+      <h1></h1>조원온도  36.5°C
+
       <div style={{ width: 150 }}>
         <ProgressBar now={progress1} variant="success" />
       </div >
